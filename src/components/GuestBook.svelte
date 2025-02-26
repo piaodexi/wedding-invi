@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import { Modal } from 'flowbite-svelte';
 	import { Icon } from 'svelte-awesome';
 	import edit from 'svelte-awesome/icons/edit';
@@ -147,4 +147,4 @@
 		bind:message
 		bind:guestMessages
 	/>
-</div>
+</div> -->

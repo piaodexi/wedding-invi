@@ -5,29 +5,17 @@
 
 	onMount(() => {
 		let mapOption = new naver.maps.Map('naverMap', {
-			center: new naver.maps.LatLng(37.45781, 126.954047), // 안내와 다르게 건물 근접 위,경도로 지정
+			center: new naver.maps.LatLng(37.6106397, 127.0308369), // 안내와 다르게 건물 근접 위,경도로 지정
 			zoom: 17
 		});
 
 		let marker = new naver.maps.Marker({
-			position: new naver.maps.LatLng(37.45781, 126.954047),
+			position: new naver.maps.LatLng(37.6106397, 127.0308369),
 			map: mapOption
 		});
 	});
 
-	//티맵 길안내
-	function tMap(name: string, lat: number, lng: number) {
-		const href =
-			'https://apis.openapi.sk.com/tmap/app/routes?appKey=' +
-			String(env.PUBLIC_TMAP_API_KEY) +
-			'&name=' +
-			name +
-			'&lon=' +
-			lng +
-			'&lat=' +
-			lat;
-		return href;
-	}
+
 
 	//카카오맵 길안내
 	function kakaoMap(name: string, lat: number, lng: number) {
@@ -50,7 +38,7 @@
 
 <svelte:head>
 	<script
-		src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId={env.PUBLIC_NAVER_API_KEY}"
+		src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=k7q597jf1d"
 	></script>
 </svelte:head>
 
@@ -72,15 +60,6 @@
 			>
 				<img src="image/kakao.png" height="10" width="10" alt="" />
 				<span class="text-sm">카카오 지도</span>
-			</a>
-			<a
-				id="tmap-navi"
-				href={tMap(poiName, longitude, latitude)}
-				role="button"
-				class="btn mx-2 rounded-lg"
-			>
-				<img src="image/tmap.png" height="10" width="10" alt="" />
-				<span class="text-sm">티맵 내비</span>
 			</a>
 			<a
 				id="naver-navi"

@@ -12,7 +12,7 @@
 	const description = dday[0] + '년 ' + dday[1] + '월 ' + dday[2] + '일 ' + timeStr + ' \n' + poiName;
 
 	onMount(() => {
-		Kakao.init(env.PUBLIC_KAKAO_JS_KEY);
+		Kakao.init('c8fe17d2360a79df96603ce5517e9c7e');
 		Kakao.Share.createDefaultButton({
 			container: '#kakao-share',
 			objectType: 'feed',
@@ -41,7 +41,7 @@
 		if (navigator.share) {
 			navigator.share({
 				title: document.title,
-				url: window.location.href
+				url: ''
 			});
 		} else {
 			copy(window.location.href);
@@ -61,14 +61,15 @@
 
 <section>
 	<div class="text-center px-5 py-5">
-		<a
+
+		 <a
 			id="kakao-share"
-			href="javascript:;"
+			href='asd'
 			role="button"
 			class="btn inline-block text-black rounded bg-gray-200 px-2 m-2 pb-[5px] pt-[11px] font-medium text-base"
 		>
 			카카오톡으로 공유</a
-		>
+		> 
 		<button
 			class="btn inline-block text-black rounded bg-gray-200 px-2 m-2 pb-[5px] pt-[6px] font-medium text-base"
 			on:click={sharePage}>링크로 공유</button
@@ -79,8 +80,8 @@
 <div class="w-full bg-stone-300 py-2">
 	<div class="max-w-xl w-full mx-auto flex space-x-2 text-sm justify-center items-center">
 		<span> developed by </span>
-		<span class="text-lg font-bold text-gray-800"> LSD </span>
-		<a class="text-gray-400" href="https://github.com/SNURFER" target="_blank" rel="noreferrer">
+		<span class="text-lg font-bold text-gray-800"> PDH </span>
+		<a class="text-gray-400" href="https://www.bangbang.co.kr" target="_blank" rel="noreferrer">
 			<Icon class="blackIcon text-black" data={githubSquare} scale={2} />
 		</a>
 	</div>
